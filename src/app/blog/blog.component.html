@@ -1,0 +1,38 @@
+<h1 class="main-heading">Blog Posts</h1>
+
+<hr class="featurette-divider">
+
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="md-form active-cyan active-cyan-2 mb-3">
+            <input matInput (keyup)="applyFilter($event)" class="form-control" type="text" placeholder="Search"
+                aria-label="Search">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let post">
+                    <a class="links" routerLink="{{post.title}}">
+                        <div class="card mb-3">
+                            <img class="card-img-top" src="{{post.image}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{post.title}}</h5>
+                                <p class="card-text links">{{post.description}}</p>
+                                <p class="card-text"><small class="text-muted">{{post.date}}</small></p>
+                            </div>
+                        </div>
+                    </a>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>

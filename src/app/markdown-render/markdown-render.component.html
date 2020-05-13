@@ -1,0 +1,22 @@
+<h1 class="main-heading">{{blogId}}</h1>
+
+<hr class="featurette-divider">
+
+<div class="col-md-8 offset-md-2 markdownRender">
+    <div class="spacing" markdown [src]="location"></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div *ngFor="let item of posts" class="col-sm-2">
+        <div class="card" style="width: 22rem;">
+            <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">{{item.description}}</p>
+                <a routerLink="../{{item.title}}" class="btn btn-primary">{{item.title}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
