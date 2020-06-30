@@ -22,10 +22,11 @@ const routes: Routes = [{
   path: 'blog/:id',
   component: MarkdownRenderComponent
 },
-{
-  path: 'blog',
-  component: BlogComponent
-}]
+// {
+//   path: 'blog',
+//   component: BlogComponent
+// }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
